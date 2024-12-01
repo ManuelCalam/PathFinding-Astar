@@ -46,10 +46,6 @@ int** A_start(int start[], int end[]){
     closed[0][0] = currentNode[0];
     closed[0][1] = currentNode[1];
 
-    printf("%d, ", closed[0][0]);
-    printf("%d", closed[0][1]);
-
-
     do{
         printf("Nodo actual: [%d, %d]\n\n", currentNode[0], currentNode[1]);
         int neighbors[8][4] = {0};
@@ -107,7 +103,7 @@ int findNeighbors(int currentNode[], int end[], int neighbors[8][4], int **close
         int newY = currentNode[1] + movements[i][1];
         int alreadyClosed = 0;
 
-        // Verificar si el vecino ya está en `closed`
+        // Verificar si el vecino ya está en el closed (nodos visitados)
         for (int j = 0; j < counter; j++) {
             if (closed[j][0] == newX && closed[j][1] == newY) {
                 alreadyClosed = 1;
